@@ -1,0 +1,33 @@
+.box{
+	display: grid;
+	font-size: 20px;
+	/* 列宽 */
+	grid-template-columns: 100px 100px 100px;
+	/* 行宽 */
+	grid-template-rows: 100px 100px;
+	grid-auto-flow: row dense;
+	grid-auto-rows: 50px;
+	gap: 10px 20px;
+	.item{
+		text-align: center;
+		border: 1px solid #999;
+		font-size: 1em;
+		color: #333;
+	}
+}
+
+$item-color:  #ef342a, #f68f26,#4ba946,#0376c2,#c077af,#f8d29d,#b5a87f,#d0e4a9,#4dc7ec;
+// through
+//获取数组$i对应的下标值 即颜色值
+@for $i from 1 through length($item-color){
+	$item: nth($item-color,$i);
+	.item-#{$i}{
+		background-color: $item;
+	}
+}
+
+
+ 
+ 
+ 
+
